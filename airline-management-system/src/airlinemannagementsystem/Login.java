@@ -1,12 +1,8 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package airlinemannagementsystem;
 
-import java.awt.Color;
-import javax.swing.JFrame;
+import java.awt.*;
+import javax.swing.*;
 
 /**
  *
@@ -17,6 +13,11 @@ public class Login extends JFrame {
     public Login(){
         //frame colour change
         getContentPane().setBackground(Color.yellow);
+        setLayout(null);
+        
+        JLabel lblusername = new JLabel ("username ");
+        lblusername.setBounds(20, 20, 100, 20);
+        add(lblusername);
         //first size increase width second height
         setSize(500,350);
         setLocation(600,250);
