@@ -67,7 +67,7 @@ public class Login extends JFrame implements ActionListener {
                 ResultSet rs = c.statement.executeQuery(query);
 
                 if (rs.next()) {
-                    System.out.println("succeesfully login");
+                    new Home();
                 }
                 // for invalid password
                 else {
@@ -75,7 +75,7 @@ public class Login extends JFrame implements ActionListener {
                     setVisible(false);
                 }
             } catch (Exception e) {
-                // TODO: handle exception
+                e.printStackTrace();
             }
 
         }
