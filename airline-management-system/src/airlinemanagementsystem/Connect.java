@@ -20,7 +20,7 @@ public class Connect {
         try {
             // for my database connection driver
             Class.forName("com.mysql.cj.jdbc.Driver");
-            connect = DriverManager.getConnection("jdbc:mysql://localhost:/airlinemanagementsystem", "root", "root");
+            connect = DriverManager.getConnection("jdbc:mysql:///airlinemanagementsystem", "root", "");
             statement = connect.createStatement();
         } catch (Exception e) {
             e.printStackTrace();
