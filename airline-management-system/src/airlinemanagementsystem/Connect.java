@@ -11,17 +11,18 @@ import java.sql.*;
  *
  * @author REFAT KHAN
  */
-public class Conn {
+public class Connect {
+    // create object
+    Connection connect;
+    Statement statement;
 
-    Connection c;
-    Statement s;
-
-    public Conn() {
+    public Connect() {
         try {
+            // for my database connection driver
             Class.forName("com.mysql.cj.jdbc.Driver");
-            c = DriverManager.getConnection("jdbc:mysql:///airlinemanagementsystem", "root", "root");
-            s = c.createStatement();
-        } catch (ClassNotFoundException | SQLException e) {
+            connect = DriverManager.getConnection("jdbc:mysql://localhost:/airlinemanagementsystem", "root", "root");
+            statement = connect.createStatement();
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }

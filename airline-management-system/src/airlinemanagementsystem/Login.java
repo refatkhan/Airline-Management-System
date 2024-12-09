@@ -56,6 +56,15 @@ public class Login extends JFrame implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent ae) {
         if (ae.getSource() == submit) {
+            String username = tfusername.getText();
+            String pass = tfpassword.getText();
+
+            try {
+                Connect c = new Connect();
+                String query = "selec * from login where username = " + username + "and password= " + pass + "";
+            } catch (Exception e) {
+                // TODO: handle exception
+            }
 
         }
         // if we click reset it will be empty
