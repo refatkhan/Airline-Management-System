@@ -11,7 +11,8 @@ public class Home extends JFrame implements ActionListener {
 
         setLayout(null);
         // add images
-        ImageIcon imageIcon = new ImageIcon(ClassLoader.getSystemResource("airlinemanagementsystem/icons/front.jpg"));
+        ImageIcon imageIcon = new ImageIcon();
+        imageIcon = new ImageIcon(ClassLoader.getSystemResource("airlinemanagementsystem/icons/front.jpg"));
         JLabel image = new JLabel(imageIcon);
         // image size
         image.setBounds(0, 0, 1600, 800);
