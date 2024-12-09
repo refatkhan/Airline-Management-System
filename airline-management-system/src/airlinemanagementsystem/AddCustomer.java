@@ -33,7 +33,7 @@ public class AddCustomer extends JFrame {
         lblnationality.setFont(new Font("Tahoma", Font.PLAIN, 16));
         add(lblnationality);
 
-        // textfield for name
+        // textfield for Nationality
         JTextField tfnationality = new JTextField();
         tfnationality.setBounds(220, 130, 150, 25);
         add(tfnationality);
@@ -45,12 +45,39 @@ public class AddCustomer extends JFrame {
         lblNid.setFont(new Font("Tahoma", Font.PLAIN, 16));
         add(lblNid);
 
-        // textfield for name
+        // textfield for Nid
         JTextField tflNid = new JTextField();
         tflNid.setBounds(220, 180, 150, 25);
         add(tflNid);
 
-        
+        // address
+        JLabel lblAddress = new JLabel("Adress: ");
+        lblAddress.setBounds(60, 230, 150, 25);
+        lblAddress.setFont(new Font("Tahoma", Font.PLAIN, 16));
+        add(lblAddress);
+        JTextField tfAdress = new JTextField();
+        tfAdress.setBounds(220, 230, 150, 25);
+        add(tfAdress);
+        // use this for select any option between male and female
+        ButtonGroup gendergGroup = new ButtonGroup();
+        // radio button
+        JLabel lblGender = new JLabel("Gender: ");
+        lblGender.setBounds(60, 280, 150, 25);
+        lblGender.setFont(new Font("Tahoma", Font.PLAIN, 16));
+        add(lblGender);
+
+        JRadioButton rbmale = new JRadioButton("Male");
+        rbmale.setBounds(220, 280, 70, 25);
+        rbmale.setBackground(Color.white);
+        add(rbmale);
+        JRadioButton rbfemale = new JRadioButton("Female");
+        rbfemale.setBounds(300, 280, 70, 25);
+        rbfemale.setBackground(Color.white);
+        add(rbfemale);
+
+        gendergGroup.add(rbfemale);
+        gendergGroup.add(rbmale);
+
         setSize(900, 600);
         setLocation(300, 150);
         setVisible(true);
