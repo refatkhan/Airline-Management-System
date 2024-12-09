@@ -68,8 +68,8 @@ public class Login extends JFrame implements ActionListener {
 
                 if (rs.next()) {
                     System.out.println("succeesfully login");
-                } 
-                //for invalid password
+                }
+                // for invalid password
                 else {
                     JOptionPane.showMessageDialog(null, "invalid username & password");
                     setVisible(false);
