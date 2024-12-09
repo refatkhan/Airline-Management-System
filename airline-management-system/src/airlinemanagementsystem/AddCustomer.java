@@ -58,6 +58,7 @@ public class AddCustomer extends JFrame {
         JTextField tfAdress = new JTextField();
         tfAdress.setBounds(220, 230, 150, 25);
         add(tfAdress);
+
         // use this for select any option between male and female
         ButtonGroup gendergGroup = new ButtonGroup();
         // radio button
@@ -77,6 +78,20 @@ public class AddCustomer extends JFrame {
 
         gendergGroup.add(rbfemale);
         gendergGroup.add(rbmale);
+
+        JLabel lblPhone = new JLabel("Phone: ");
+        lblPhone.setBounds(60, 330, 150, 25);
+        lblPhone.setFont(new Font("Tahoma", Font.PLAIN, 16));
+        add(lblPhone);
+        JTextField tfPhone = new JTextField();
+        tfPhone.setBounds(220, 330, 150, 25);
+        add(tfPhone);
+
+        JButton save = new JButton("Saved");
+        save.setBackground(Color.BLACK);
+        save.setForeground(Color.WHITE);
+        save.setBounds(220, 380, 150, 30);
+        add(save);
 
         setSize(900, 600);
         setLocation(300, 150);
