@@ -4,6 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 import java.sql.*;
+import com.toedter.calendar.JDateChooser;
 
 public class BookFlight extends JFrame implements ActionListener {
 
@@ -142,19 +143,22 @@ public class BookFlight extends JFrame implements ActionListener {
         lblfcode.setBounds(220, 480, 150, 25);
         add(lblfcode);
         // label for date
-        JLabel lbldate = new JLabel("Flight Date: ");
+        JLabel lbldate = new JLabel("Travel Date: ");
         lbldate.setBounds(60, 530, 150, 25);
         lbldate.setFont(new Font("Tahoma", Font.PLAIN, 16));
         add(lbldate);
 
-        lbldate = new JLabel();
-        lbldate.setBounds(220, 530, 150, 25);
-        add(lbldate);
+        JDateChooser date = new JDateChooser();
+        date.setBounds(220, 530, 150, 25);
+        add(date);
 
         ImageIcon imageIcon = new ImageIcon();
-        imageIcon = new ImageIcon(ClassLoader.getSystemResource("airlinemanagementsystem/icons/emp.png"));
+        
+        imageIcon = new ImageIcon(ClassLoader.getSystemResource("airlinemanagementsystem/icons/details.jpg"));
+        //image crop inbuilt
+        //Image imageIcon2 = imageIcon.getImage().getScaledInstance(450, 320, Image.SCALE_DEFAULT)
         JLabel lblimage = new JLabel(imageIcon);
-        lblimage.setBounds(450, 80, 280, 400);
+        lblimage.setBounds(550, 80, 500, 410);
         add(lblimage);
         setSize(1200, 800);
         setLocation(300, 150);
