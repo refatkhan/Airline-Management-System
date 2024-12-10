@@ -12,6 +12,9 @@ public class BookFlight extends JFrame implements ActionListener {
     JLabel tfName, tfnationality, tfAdress, tfPhone, labelgender, lblfname, lblflcode, lbldate;
     Choice source, destination;
 
+    /**
+     * 
+     */
     public BookFlight() {
 
         getContentPane().setBackground(Color.gray);
@@ -152,14 +155,13 @@ public class BookFlight extends JFrame implements ActionListener {
         date.setBounds(220, 530, 150, 25);
         add(date);
 
-        ImageIcon imageIcon = new ImageIcon();
-        
-        imageIcon = new ImageIcon(ClassLoader.getSystemResource("airlinemanagementsystem/icons/details.jpg"));
-        //image crop inbuilt
-        //Image imageIcon2 = imageIcon.getImage().getScaledInstance(450, 320, Image.SCALE_DEFAULT)
-        JLabel lblimage = new JLabel(imageIcon);
+        ImageIcon i1 = new ImageIcon(ClassLoader.getSystemResource("airlinemanagementsystem/icons/details.jpg"));
+        Image i2 = i1.getImage().getScaledInstance(450, 320, Image.SCALE_DEFAULT);
+        ImageIcon image = new ImageIcon(i2);
+        JLabel lblimage = new JLabel(image);
         lblimage.setBounds(550, 80, 500, 410);
         add(lblimage);
+
         setSize(1200, 800);
         setLocation(300, 150);
         setVisible(true);
