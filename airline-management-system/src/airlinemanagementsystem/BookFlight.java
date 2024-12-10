@@ -6,8 +6,8 @@ import java.awt.event.*;
 
 public class BookFlight extends JFrame implements ActionListener {
 
-    JTextField tfName, tfnationality, tflNid, tfAdress, tfPhone;
-    JRadioButton rbmale, rbfemale;
+    JTextField tflNid;
+    JLabel tfName, tfnationality, tfAdress, tfPhone, labelgender;
 
     public BookFlight() {
 
@@ -38,24 +38,24 @@ public class BookFlight extends JFrame implements ActionListener {
         add(tflNid);
         // lavelname
         JLabel lblName = new JLabel("Name: ");
-        lblName.setBounds(60, 80, 150, 25);
+        lblName.setBounds(60, 130, 150, 25);
         lblName.setFont(new Font("Tahoma", Font.PLAIN, 16));
         add(lblName);
 
         // textfield for name
-        tfName = new JTextField();
-        tfName.setBounds(220, 80, 150, 25);
+        tfName = new JLabel();
+        tfName.setBounds(220, 130, 150, 25);
         add(tfName);
 
         // // lavel for nationality
         JLabel lblnationality = new JLabel("Nationality: ");
-        lblnationality.setBounds(60, 130, 150, 25);
+        lblnationality.setBounds(60, 180, 150, 25);
         lblnationality.setFont(new Font("Tahoma", Font.PLAIN, 16));
         add(lblnationality);
 
         // textfield for Nationality
-        tfnationality = new JTextField();
-        tfnationality.setBounds(220, 130, 150, 25);
+        tfnationality = new JLabel();
+        tfnationality.setBounds(220, 180, 150, 25);
         add(tfnationality);
 
         // address
@@ -63,29 +63,20 @@ public class BookFlight extends JFrame implements ActionListener {
         lblAddress.setBounds(60, 230, 150, 25);
         lblAddress.setFont(new Font("Tahoma", Font.PLAIN, 16));
         add(lblAddress);
-        tfAdress = new JTextField();
+        tfAdress = new JLabel();
         tfAdress.setBounds(220, 230, 150, 25);
         add(tfAdress);
 
-        // use this for select any option between male and female
-        ButtonGroup gendergGroup = new ButtonGroup();
         // radio button
         JLabel lblGender = new JLabel("Gender: ");
-        lblGender.setBounds(60, 280, 150, 25);
+        lblGender.setBounds(220, 280, 150, 25);
         lblGender.setFont(new Font("Tahoma", Font.PLAIN, 16));
         add(lblGender);
 
-        rbmale = new JRadioButton("Male");
-        rbmale.setBounds(220, 280, 70, 25);
-        rbmale.setBackground(Color.white);
-        add(rbmale);
-        rbfemale = new JRadioButton("Female");
-        rbfemale.setBounds(300, 280, 70, 25);
-        rbfemale.setBackground(Color.white);
-        add(rbfemale);
-
-        gendergGroup.add(rbfemale);
-        gendergGroup.add(rbmale);
+        JLabel labelgender = new JLabel("Gender: ");
+        labelgender.setBounds(220, 280, 150, 25);
+        labelgender.setFont(new Font("Tahoma", Font.PLAIN, 16));
+        add(labelgender);
 
         JLabel lblPhone = new JLabel("Phone: ");
         lblPhone.setBounds(60, 330, 150, 25);
