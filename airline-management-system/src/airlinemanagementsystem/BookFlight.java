@@ -3,12 +3,13 @@ package airlinemanagementsystem;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
-import java.sql.ResultSet;
+import java.sql.*;
 
 public class BookFlight extends JFrame implements ActionListener {
 
     JTextField tflNid;
     JLabel tfName, tfnationality, tfAdress, tfPhone, labelgender;
+    Choice source, destination;
 
     public BookFlight() {
 
@@ -104,11 +105,12 @@ public class BookFlight extends JFrame implements ActionListener {
         try {
 
             Connect connect = new Connect();
-            String query = "select *from flight ";
+            String query = "select * from flight";
             ResultSet rs = connect.statement.executeQuery(query);
+
             while (rs.next()) {
                 source.add(rs.getString("source"));
-                source.add(rs.getString("destination"));
+                destination.add(rs.getString("destination"));
             }
 
         } catch (Exception e) {
