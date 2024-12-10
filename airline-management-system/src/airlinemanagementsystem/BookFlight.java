@@ -117,12 +117,29 @@ public class BookFlight extends JFrame implements ActionListener {
             e.printStackTrace();
         }
 
-        JButton save = new JButton("Saved");
-        save.setBackground(Color.BLACK);
-        save.setForeground(Color.WHITE);
-        save.setBounds(220, 380, 150, 30);
-        save.addActionListener(this);
-        add(save);
+        JButton flight = new JButton("See Flight: ");
+        flight.setBackground(Color.BLACK);
+        flight.setForeground(Color.WHITE);
+        flight.setBounds(380, 380, 120, 25);
+        flight.addActionListener(this);
+        add(flight);
+
+        JLabel lblflightname = new JLabel("Flight Name: ");
+        lblflightname.setBounds(60, 430, 150, 25);
+        lblflightname.setFont(new Font("Tahoma", Font.PLAIN, 16));
+        add(lblflightname);
+        tfAdress = new JLabel();
+        tfAdress.setBounds(220, 430, 150, 25);
+        add(tfAdress);
+
+        JLabel lblflightcode = new JLabel("Flight Name: ");
+        lblflightcode.setBounds(60, 430, 150, 25);
+        lblflightcode.setFont(new Font("Tahoma", Font.PLAIN, 16));
+        add(lblflightname);
+        
+        tfAdress = new JLabel();
+        tfAdress.setBounds(220, 430, 150, 25);
+        add(tfAdress);
 
         ImageIcon imageIcon = new ImageIcon();
         imageIcon = new ImageIcon(ClassLoader.getSystemResource("airlinemanagementsystem/icons/emp.png"));
