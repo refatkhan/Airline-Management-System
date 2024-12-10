@@ -8,7 +8,7 @@ import java.sql.*;
 public class BookFlight extends JFrame implements ActionListener {
 
     JTextField tflNid;
-    JLabel tfName, tfnationality, tfAdress, tfPhone, labelgender;
+    JLabel tfName, tfnationality, tfAdress, tfPhone, labelgender, lblfname, lblflcode;
     Choice source, destination;
 
     public BookFlight() {
@@ -128,25 +128,26 @@ public class BookFlight extends JFrame implements ActionListener {
         lblflightname.setBounds(60, 430, 150, 25);
         lblflightname.setFont(new Font("Tahoma", Font.PLAIN, 16));
         add(lblflightname);
-        tfAdress = new JLabel();
-        tfAdress.setBounds(220, 430, 150, 25);
-        add(tfAdress);
 
-        JLabel lblflightcode = new JLabel("Flight Name: ");
-        lblflightcode.setBounds(60, 430, 150, 25);
-        lblflightcode.setFont(new Font("Tahoma", Font.PLAIN, 16));
-        add(lblflightname);
-        
-        tfAdress = new JLabel();
-        tfAdress.setBounds(220, 430, 150, 25);
-        add(tfAdress);
+        lblfname = new JLabel();
+        lblfname.setBounds(220, 430, 150, 25);
+        add(lblfname);
+
+        JLabel lblfcode = new JLabel("Flight Code: ");
+        lblfcode.setBounds(60, 480, 150, 25);
+        lblfcode.setFont(new Font("Tahoma", Font.PLAIN, 16));
+        add(lblfcode);
+
+        lblfcode = new JLabel();
+        lblfcode.setBounds(220, 480, 150, 25);
+        add(lblfcode);
 
         ImageIcon imageIcon = new ImageIcon();
         imageIcon = new ImageIcon(ClassLoader.getSystemResource("airlinemanagementsystem/icons/emp.png"));
         JLabel lblimage = new JLabel(imageIcon);
         lblimage.setBounds(450, 80, 280, 400);
         add(lblimage);
-        setSize(900, 600);
+        setSize(1200, 800);
         setLocation(300, 150);
         setVisible(true);
 
