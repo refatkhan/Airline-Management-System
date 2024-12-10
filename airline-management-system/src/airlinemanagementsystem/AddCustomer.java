@@ -93,6 +93,11 @@ public class AddCustomer extends JFrame {
         save.setBounds(220, 380, 150, 30);
         add(save);
 
+        ImageIcon imageIcon = new ImageIcon();
+        imageIcon = new ImageIcon(ClassLoader.getSystemResource("airlinemanagementsystem/icons/emp.png"));
+        JLabel lblimage = new JLabel(imageIcon);
+        lblimage.setBounds(450, 80, 280, 400);
+        add(lblimage);
         setSize(900, 600);
         setLocation(300, 150);
         setVisible(true);
