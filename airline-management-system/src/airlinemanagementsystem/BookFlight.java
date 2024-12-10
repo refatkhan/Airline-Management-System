@@ -38,6 +38,7 @@ public class BookFlight extends JFrame implements ActionListener {
         fetchUserButton.setBackground(Color.BLACK);
         fetchUserButton.setForeground(Color.white);
         fetchUserButton.setBounds(380, 80, 120, 25);
+        fetchUserButton.addActionListener(this);
         add(fetchUserButton);
 
         // textfield for Nid
@@ -184,7 +185,7 @@ public class BookFlight extends JFrame implements ActionListener {
 
             try {
                 Connect connect = new Connect();
-                String query = "select * from passenger where aadhar = '" + nid + "'";
+                String query = "select * from passenger where nid = '" + nid + "'";
                 ResultSet rs = connect.statement.executeQuery(query);
                 if (rs.next()) {
                     tfName.setText(rs.getString("name"));
