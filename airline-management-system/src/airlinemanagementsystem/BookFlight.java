@@ -210,12 +210,12 @@ public class BookFlight extends JFrame implements ActionListener {
                 String query = "select * from flight where source = '" + src + "' and destination = '" + dest + "'";
                 ResultSet rs = connect.statement.executeQuery(query);
                 if (rs.next()) {
-                    tfName.setText(rs.getString("name"));
-                    tfnationality.setText(rs.getString("nationality"));
-                    tfAdress.setText(rs.getString("address"));
-                    labelgender.setText(rs.getString("gender"));
+
+                    lblfname.setText(rs.getString("f_name"));
+                    lblflcode.setText(rs.getString("f_code"));
+
                 } else {
-                    JOptionPane.showMessageDialog(null, "Didn't Find ");
+                    JOptionPane.showMessageDialog(null, "No Flight Found ");
 
                 }
 
