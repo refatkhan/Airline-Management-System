@@ -11,6 +11,8 @@ public class BookFlight extends JFrame implements ActionListener {
     JTextField tflNid;
     JLabel tfName, tfnationality, tfAdress, tfPhone, labelgender, lblfname, lblflcode, lbldate;
     Choice source, destination;
+    JButton bookflight, fetchUserButton, flight;
+    JDateChooser date;
 
     /**
      * 
@@ -32,11 +34,11 @@ public class BookFlight extends JFrame implements ActionListener {
         add(lblNid);
 
         // fetchButton
-        JButton fetchButton = new JButton("Fetch");
-        fetchButton.setBackground(Color.BLACK);
-        fetchButton.setForeground(Color.white);
-        fetchButton.setBounds(380, 80, 120, 25);
-        add(fetchButton);
+        fetchUserButton = new JButton("Fetch User Details1");
+        fetchUserButton.setBackground(Color.BLACK);
+        fetchUserButton.setForeground(Color.white);
+        fetchUserButton.setBounds(380, 80, 120, 25);
+        add(fetchUserButton);
 
         // textfield for Nid
         tflNid = new JTextField();
@@ -101,7 +103,7 @@ public class BookFlight extends JFrame implements ActionListener {
         lbldestination.setFont(new Font("Tahoma", Font.PLAIN, 16));
         add(lbldestination);
 
-        Choice destination = new Choice();
+        destination = new Choice();
         destination.setBounds(220, 380, 120, 25);
 
         add(destination);
@@ -121,7 +123,7 @@ public class BookFlight extends JFrame implements ActionListener {
             e.printStackTrace();
         }
         // flight button
-        JButton flight = new JButton("See Flight: ");
+        flight = new JButton("See Flight: ");
         flight.setBackground(Color.BLACK);
         flight.setForeground(Color.WHITE);
         flight.setBounds(380, 380, 120, 25);
@@ -151,7 +153,7 @@ public class BookFlight extends JFrame implements ActionListener {
         lbldate.setFont(new Font("Tahoma", Font.PLAIN, 16));
         add(lbldate);
 
-        JDateChooser date = new JDateChooser();
+        date = new JDateChooser();
         date.setBounds(220, 530, 150, 25);
         add(date);
 
@@ -162,6 +164,13 @@ public class BookFlight extends JFrame implements ActionListener {
         lblimage.setBounds(550, 80, 500, 410);
         add(lblimage);
 
+        bookflight = new JButton("Book Flight ");
+        bookflight.setBackground(Color.YELLOW);
+        bookflight.setForeground(Color.WHITE);
+        bookflight.setBounds(220, 580, 150, 25);
+        bookflight.addActionListener(this);
+        add(bookflight);
+
         setSize(1200, 800);
         setLocation(300, 150);
         setVisible(true);
@@ -169,22 +178,24 @@ public class BookFlight extends JFrame implements ActionListener {
     }
 
     public void actionPerformed(ActionEvent ae) {
-        String name = tfName.getText();
-        String nationality = tfnationality.getText();
-        String phone = tfPhone.getText();
-        String nid = tflNid.getText();
-        String address = tfAdress.getText();
-        String gender = null;
+        if (ae.getSource() == fetchUserButton) {
+            String name = tfName.getText();
+            String nationality = tfnationality.getText();
+            String phone = tfPhone.getText();
+            String nid = tflNid.getText();
+            String address = tfAdress.getText();
+            String gender = null;
 
-        try {
-            Connect connect = new Connect();
-            String query = "insert into passenger values('" + name + "', '" + nationality + "', '" + phone + "', '"
-                    + address + "', '" + nid + "', '" + gender + "')";
-            connect.statement.executeUpdate(query);
-            JOptionPane.showMessageDialog(null, "Customer Details added succesfull");
+            try {
+                Connect connect = new Connect();
+                String query = "insert into passenger values('" + name + "', '" + nationality + "', '" + phone + "', '"
+                        + address + "', '" + nid + "', '" + gender + "')";
+                connect.statement.executeUpdate(query);
+                JOptionPane.showMessageDialog(null, "Customer Details added succesfull");
 
-        } catch (Exception e) {
-            e.printStackTrace();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }
 
     }
