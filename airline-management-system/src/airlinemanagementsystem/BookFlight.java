@@ -8,7 +8,7 @@ import java.sql.*;
 public class BookFlight extends JFrame implements ActionListener {
 
     JTextField tflNid;
-    JLabel tfName, tfnationality, tfAdress, tfPhone, labelgender, lblfname, lblflcode,lbldate;
+    JLabel tfName, tfnationality, tfAdress, tfPhone, labelgender, lblfname, lblflcode, lbldate;
     Choice source, destination;
 
     public BookFlight() {
@@ -141,7 +141,7 @@ public class BookFlight extends JFrame implements ActionListener {
         lblfcode = new JLabel();
         lblfcode.setBounds(220, 480, 150, 25);
         add(lblfcode);
-
+        // label for date
         JLabel lbldate = new JLabel("Flight Date: ");
         lbldate.setBounds(60, 530, 150, 25);
         lbldate.setFont(new Font("Tahoma", Font.PLAIN, 16));
