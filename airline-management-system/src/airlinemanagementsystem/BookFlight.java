@@ -69,7 +69,7 @@ public class BookFlight extends JFrame implements ActionListener {
 
         // radio button
         JLabel lblGender = new JLabel("Gender: ");
-        lblGender.setBounds(220, 280, 150, 25);
+        lblGender.setBounds(60, 280, 150, 25);
         lblGender.setFont(new Font("Tahoma", Font.PLAIN, 16));
         add(lblGender);
 
@@ -80,12 +80,12 @@ public class BookFlight extends JFrame implements ActionListener {
 
         // Departure
         JLabel lblsource = new JLabel("Source: ");
-        lblsource.setBounds(220, 280, 150, 25);
+        lblsource.setBounds(60, 330, 150, 25);
         lblsource.setFont(new Font("Tahoma", Font.PLAIN, 16));
         add(lblsource);
         // add destination
         JLabel lbldestination = new JLabel("Destinaion: ");
-        lbldestination.setBounds(220, 280, 150, 25);
+        lbldestination.setBounds(60, 380, 150, 25);
         lbldestination.setFont(new Font("Tahoma", Font.PLAIN, 16));
         add(lbldestination);
 
@@ -114,11 +114,6 @@ public class BookFlight extends JFrame implements ActionListener {
         String nid = tflNid.getText();
         String address = tfAdress.getText();
         String gender = null;
-        if (rbmale.isSelected()) {
-            gender = "Male";
-        } else {
-            gender = "Female";
-        }
 
         try {
             Connect connect = new Connect();
