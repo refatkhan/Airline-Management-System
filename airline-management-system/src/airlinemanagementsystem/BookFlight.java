@@ -179,18 +179,18 @@ public class BookFlight extends JFrame implements ActionListener {
 
     public void actionPerformed(ActionEvent ae) {
         if (ae.getSource() == fetchUserButton) {
-            String name = tfName.getText();
-            String nationality = tfnationality.getText();
-            String phone = tfPhone.getText();
+
             String nid = tflNid.getText();
-            String address = tfAdress.getText();
-            String gender = null;
 
             try {
                 Connect connect = new Connect();
-                String query = "insert into passenger values('" + name + "', '" + nationality + "', '" + phone + "', '"
-                        + address + "', '" + nid + "', '" + gender + "')";
-                connect.statement.executeUpdate(query);
+                String query = "select * from passenger where aadhar = '" + nid + "'";
+                ResultSet rs = connect.statement.executeQuery(query);
+
+
+
+
+                
                 JOptionPane.showMessageDialog(null, "Customer Details added succesfull");
 
             } catch (Exception e) {
