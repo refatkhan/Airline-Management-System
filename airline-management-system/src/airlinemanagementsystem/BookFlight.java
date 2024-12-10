@@ -83,8 +83,11 @@ public class BookFlight extends JFrame implements ActionListener {
         lblsource.setBounds(220, 280, 150, 25);
         lblsource.setFont(new Font("Tahoma", Font.PLAIN, 16));
         add(lblsource);
-
-        
+        // add destination
+        JLabel lbldestination = new JLabel("Destinaion: ");
+        lbldestination.setBounds(220, 280, 150, 25);
+        lbldestination.setFont(new Font("Tahoma", Font.PLAIN, 16));
+        add(lbldestination);
 
         JButton save = new JButton("Saved");
         save.setBackground(Color.BLACK);
