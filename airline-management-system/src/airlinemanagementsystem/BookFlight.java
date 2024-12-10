@@ -186,12 +186,15 @@ public class BookFlight extends JFrame implements ActionListener {
                 Connect connect = new Connect();
                 String query = "select * from passenger where aadhar = '" + nid + "'";
                 ResultSet rs = connect.statement.executeQuery(query);
+                if (rs.next()) {
+                    tfName.setText(rs.getString("name"));
+                    tfnationality.setText(rs.getString("nationality"));
+                    tfAdress.setText(rs.getString("address"));
+                    labelgender.setText(rs.getString("gender"));
+                } else {
+                    JOptionPane.showMessageDialog(null, "Didn't Find ");
 
-
-
-
-                
-                JOptionPane.showMessageDialog(null, "Customer Details added succesfull");
+                }
 
             } catch (Exception e) {
                 e.printStackTrace();
