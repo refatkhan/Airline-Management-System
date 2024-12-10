@@ -9,7 +9,8 @@ import com.toedter.calendar.JDateChooser;
 public class BookFlight extends JFrame implements ActionListener {
 
     JTextField tflNid;
-    JLabel tfName, tfnationality, tfAdress, tfPhone, labelgender, lblfname, lblflcode, lbldate;
+    JLabel tfName, lblsource, lbldestination, tfnationality, tfAdress, tfPhone, labelgender, lblfname,
+            lbldate, lblGender, lblflcode;
     Choice source, destination;
     JButton bookflight, fetchUserButton, flight;
     JDateChooser date;
@@ -77,17 +78,17 @@ public class BookFlight extends JFrame implements ActionListener {
         add(tfAdress);
 
         // radio button
-        JLabel lblGender = new JLabel("Gender: ");
+        lblGender = new JLabel("Gender: ");
         lblGender.setBounds(60, 280, 150, 25);
         lblGender.setFont(new Font("Tahoma", Font.PLAIN, 16));
         add(lblGender);
 
-        JLabel labelgender = new JLabel();
+        labelgender = new JLabel();
         labelgender.setBounds(220, 280, 150, 25);
         add(labelgender);
 
         // Departure
-        JLabel lblsource = new JLabel("Source");
+        lblsource = new JLabel("Source");
         lblsource.setBounds(60, 330, 150, 25);
         lblsource.setFont(new Font("Tahoma", Font.PLAIN, 16));
         add(lblsource);
@@ -99,7 +100,7 @@ public class BookFlight extends JFrame implements ActionListener {
         add(source);
 
         // add destination
-        JLabel lbldestination = new JLabel("Destinaion");
+        lbldestination = new JLabel("Destinaion");
         lbldestination.setBounds(60, 380, 150, 25);
         lbldestination.setFont(new Font("Tahoma", Font.PLAIN, 16));
         add(lbldestination);
@@ -131,7 +132,7 @@ public class BookFlight extends JFrame implements ActionListener {
         flight.addActionListener(this);
         add(flight);
         // label for fliht name
-        JLabel lblfname = new JLabel("Flight Name: ");
+        lblfname = new JLabel("Flight Name: ");
         lblfname.setBounds(60, 430, 150, 25);
         lblfname.setFont(new Font("Tahoma", Font.PLAIN, 16));
         add(lblfname);
@@ -140,14 +141,14 @@ public class BookFlight extends JFrame implements ActionListener {
         lblfname.setBounds(220, 430, 150, 25);
         add(lblfname);
         // label for flight code
-        JLabel lblfcode = new JLabel("Flight Code: ");
-        lblfcode.setBounds(60, 480, 150, 25);
-        lblfcode.setFont(new Font("Tahoma", Font.PLAIN, 16));
-        add(lblfcode);
+        lblflcode = new JLabel("Flight Code: ");
+        lblflcode.setBounds(60, 480, 150, 25);
+        lblflcode.setFont(new Font("Tahoma", Font.PLAIN, 16));
+        add(lblflcode);
 
-        lblfcode = new JLabel();
-        lblfcode.setBounds(220, 480, 150, 25);
-        add(lblfcode);
+        lblflcode = new JLabel();
+        lblflcode.setBounds(220, 480, 150, 25);
+        add(lblflcode);
         // label for date
         JLabel lbldate = new JLabel("Travel Date: ");
         lbldate.setBounds(60, 530, 150, 25);
