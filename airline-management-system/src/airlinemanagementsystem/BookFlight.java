@@ -3,6 +3,7 @@ package airlinemanagementsystem;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
+import java.sql.ResultSet;
 
 public class BookFlight extends JFrame implements ActionListener {
 
@@ -73,9 +74,8 @@ public class BookFlight extends JFrame implements ActionListener {
         lblGender.setFont(new Font("Tahoma", Font.PLAIN, 16));
         add(lblGender);
 
-        JLabel labelgender = new JLabel("Gender: ");
+        JLabel labelgender = new JLabel();
         labelgender.setBounds(220, 280, 150, 25);
-        labelgender.setFont(new Font("Tahoma", Font.PLAIN, 16));
         add(labelgender);
 
         // Departure
@@ -83,11 +83,37 @@ public class BookFlight extends JFrame implements ActionListener {
         lblsource.setBounds(60, 330, 150, 25);
         lblsource.setFont(new Font("Tahoma", Font.PLAIN, 16));
         add(lblsource);
+
+        // dropdown
+        Choice source = new Choice();
+        source.setBounds(220, 330, 120, 25);
+
+        add(source);
+
         // add destination
         JLabel lbldestination = new JLabel("Destinaion: ");
         lbldestination.setBounds(60, 380, 150, 25);
         lbldestination.setFont(new Font("Tahoma", Font.PLAIN, 16));
         add(lbldestination);
+
+        Choice destination = new Choice();
+        destination.setBounds(220, 380, 120, 25);
+
+        add(destination);
+
+        try {
+
+            Connect connect = new Connect();
+            String query = "select *from flight ";
+            ResultSet rs = connect.statement.executeQuery(query);
+            while (rs.next()) {
+                source.add(rs.getString("source"));
+                source.add(rs.getString("destination"));
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
         JButton save = new JButton("Saved");
         save.setBackground(Color.BLACK);
