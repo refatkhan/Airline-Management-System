@@ -87,19 +87,19 @@ public class BookFlight extends JFrame implements ActionListener {
         add(labelgender);
 
         // Departure
-        JLabel lblsource = new JLabel("Source: ");
+        JLabel lblsource = new JLabel("Source");
         lblsource.setBounds(60, 330, 150, 25);
         lblsource.setFont(new Font("Tahoma", Font.PLAIN, 16));
         add(lblsource);
 
         // dropdown
-        Choice source = new Choice();
+        source = new Choice();
         source.setBounds(220, 330, 120, 25);
 
         add(source);
 
         // add destination
-        JLabel lbldestination = new JLabel("Destinaion: ");
+        JLabel lbldestination = new JLabel("Destinaion");
         lbldestination.setBounds(60, 380, 150, 25);
         lbldestination.setFont(new Font("Tahoma", Font.PLAIN, 16));
         add(lbldestination);
@@ -131,10 +131,10 @@ public class BookFlight extends JFrame implements ActionListener {
         flight.addActionListener(this);
         add(flight);
         // label for fliht name
-        JLabel lblflightname = new JLabel("Flight Name: ");
-        lblflightname.setBounds(60, 430, 150, 25);
-        lblflightname.setFont(new Font("Tahoma", Font.PLAIN, 16));
-        add(lblflightname);
+        JLabel lblfname = new JLabel("Flight Name: ");
+        lblfname.setBounds(60, 430, 150, 25);
+        lblfname.setFont(new Font("Tahoma", Font.PLAIN, 16));
+        add(lblfname);
 
         lblfname = new JLabel();
         lblfname.setBounds(220, 430, 150, 25);
@@ -166,7 +166,7 @@ public class BookFlight extends JFrame implements ActionListener {
         add(lblimage);
 
         bookflight = new JButton("Book Flight ");
-        bookflight.setBackground(Color.YELLOW);
+        bookflight.setBackground(Color.cyan);
         bookflight.setForeground(Color.WHITE);
         bookflight.setBounds(220, 580, 150, 25);
         bookflight.addActionListener(this);
@@ -201,24 +201,21 @@ public class BookFlight extends JFrame implements ActionListener {
                 e.printStackTrace();
             }
         } else if (ae.getSource() == flight) {
-
             String src = source.getSelectedItem();
             String dest = destination.getSelectedItem();
-
             try {
-                Connect connect = new Connect();
-                String query = "select * from flight where source = '" + src + "' and destination = '" + dest + "'";
-                ResultSet rs = connect.statement.executeQuery(query);
-                if (rs.next()) {
+                Connect conn = new Connect();
 
+                String query = "select * from flight where source = '" + src + "' and destination = '" + dest + "'";
+
+                ResultSet rs = conn.statement.executeQuery(query);
+
+                if (rs.next()) {
                     lblfname.setText(rs.getString("f_name"));
                     lblflcode.setText(rs.getString("f_code"));
-
                 } else {
-                    JOptionPane.showMessageDialog(null, "No Flight Found ");
-
+                    JOptionPane.showMessageDialog(null, "No Flights Found");
                 }
-
             } catch (Exception e) {
                 e.printStackTrace();
             }
