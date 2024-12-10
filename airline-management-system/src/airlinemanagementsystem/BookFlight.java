@@ -220,6 +220,15 @@ public class BookFlight extends JFrame implements ActionListener {
             } catch (Exception e) {
                 e.printStackTrace();
             }
+        } else {
+            String nid = tflNid.getText();
+            String name = tfName.getText();
+            String nationality = tfnationality.getText();
+            String flightname = lblfname.getText();
+            String flightcode = lblflcode.getText();
+            String src = source.getSelectedItem();
+            String des = destination.getSelectedItem();
+            String date = ((JTextField) date.getDateEditor().getUiComponent()).getText();
         }
 
     }
