@@ -8,7 +8,7 @@ import java.sql.*;
 public class BookFlight extends JFrame implements ActionListener {
 
     JTextField tflNid;
-    JLabel tfName, tfnationality, tfAdress, tfPhone, labelgender, lblfname, lblflcode;
+    JLabel tfName, tfnationality, tfAdress, tfPhone, labelgender, lblfname, lblflcode,lbldate;
     Choice source, destination;
 
     public BookFlight() {
@@ -116,14 +116,14 @@ public class BookFlight extends JFrame implements ActionListener {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
+        // flight button
         JButton flight = new JButton("See Flight: ");
         flight.setBackground(Color.BLACK);
         flight.setForeground(Color.WHITE);
         flight.setBounds(380, 380, 120, 25);
         flight.addActionListener(this);
         add(flight);
-
+        // label for fliht name
         JLabel lblflightname = new JLabel("Flight Name: ");
         lblflightname.setBounds(60, 430, 150, 25);
         lblflightname.setFont(new Font("Tahoma", Font.PLAIN, 16));
@@ -132,7 +132,7 @@ public class BookFlight extends JFrame implements ActionListener {
         lblfname = new JLabel();
         lblfname.setBounds(220, 430, 150, 25);
         add(lblfname);
-
+        // label for flight code
         JLabel lblfcode = new JLabel("Flight Code: ");
         lblfcode.setBounds(60, 480, 150, 25);
         lblfcode.setFont(new Font("Tahoma", Font.PLAIN, 16));
@@ -141,6 +141,15 @@ public class BookFlight extends JFrame implements ActionListener {
         lblfcode = new JLabel();
         lblfcode.setBounds(220, 480, 150, 25);
         add(lblfcode);
+
+        JLabel lbldate = new JLabel("Flight Date: ");
+        lbldate.setBounds(60, 530, 150, 25);
+        lbldate.setFont(new Font("Tahoma", Font.PLAIN, 16));
+        add(lbldate);
+
+        lbldate = new JLabel();
+        lbldate.setBounds(220, 530, 150, 25);
+        add(lbldate);
 
         ImageIcon imageIcon = new ImageIcon();
         imageIcon = new ImageIcon(ClassLoader.getSystemResource("airlinemanagementsystem/icons/emp.png"));
