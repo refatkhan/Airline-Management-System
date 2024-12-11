@@ -10,6 +10,7 @@ public class JourneyDetails extends JFrame {
 
     JTable table;
     JTextField pnr;
+    JButton show;
 
     public JourneyDetails() {
 
@@ -35,9 +36,9 @@ public class JourneyDetails extends JFrame {
 
     public void actionPerformed(ActionEvent ae) {
         try {
-            Connect conn = new Connect();
+            Connect connect = new Connect();
 
-            ResultSet rs = conn.statement.executeQuery("select * from flight");
+            ResultSet rs = connect.statement.executeQuery("select * from flight");
             table.setModel(DbUtils.resultSetToTableModel(rs));
         } catch (Exception e) {
             e.printStackTrace();
