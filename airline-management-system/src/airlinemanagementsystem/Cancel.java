@@ -77,7 +77,17 @@ public class Cancel extends JFrame implements ActionListener {
         lblgender.setBounds(60, 280, 150, 25);
         lblgender.setFont(new Font("Tahoma", Font.PLAIN, 16));
         add(lblgender);
+        lbldest = new JLabel();
+        lbldest.setBounds(540, 220, 150, 25);
+        add(lbldest);
+        JLabel lblfname = new JLabel("Flight Name");
+        lblfname.setBounds(60, 260, 150, 25);
+        lblfname.setFont(new Font("Tahoma", Font.PLAIN, 16));
+        add(lblfname);
 
+        labelfname = new JLabel();
+        labelfname.setBounds(220, 260, 150, 25);
+        add(labelfname);
         setSize(800, 450);
         setLocation(350, 150);
         setVisible(true);
