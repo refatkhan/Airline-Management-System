@@ -9,7 +9,7 @@ import java.util.Random;
 
 public class BoardingPass extends JFrame implements ActionListener {
 
-    JTextField tflNid;
+    JTextField tfpnr;
     JLabel tfName, lblSource, lblDestination, tfnationality, tfAddress, labelGender, lblFname, lblFlcode;
     Choice source, destination;
     JButton bookFlight, fetchUserButton, flightButton;
@@ -38,6 +38,9 @@ public class BoardingPass extends JFrame implements ActionListener {
         lblnid.setFont(new Font("Tahoma", Font.PLAIN, 16));
         add(lblnid);
         
+        tfpnr = new JTextField();
+        tfpnr.setBounds(220, 100, 150, 25);
+        add(tfpnr);
 
         // Name
         JLabel lblName = new JLabel("Name: ");
