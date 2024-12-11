@@ -57,7 +57,32 @@ public class Cancel extends JFrame implements ActionListener {
         lblnationality.setBounds(60, 180, 150, 25);
         lblnationality.setFont(new Font("Tahoma", Font.PLAIN, 16));
         add(lblnationality);
+        cancellationno = new JLabel("" + random.nextInt(1000000));
+        cancellationno.setBounds(220, 180, 150, 25);
+        add(cancellationno);
+        JLabel lbladdress = new JLabel("Flight Code");
+        lbladdress.setBounds(60, 230, 150, 25);
+        lbladdress.setFont(new Font("Tahoma", Font.PLAIN, 16));
+        add(lbladdress);
+        lblfcode = new JLabel();
+        lblfcode.setBounds(220, 230, 150, 25);
+        add(lblfcode);
 
+        JLabel lblgender = new JLabel("Date");
+        lblgender.setBounds(60, 280, 150, 25);
+        lblgender.setFont(new Font("Tahoma", Font.PLAIN, 16));
+        add(lblgender);
+
+        lbldateoftravel = new JLabel();
+        lbldateoftravel.setBounds(220, 280, 150, 25);
+        add(lbldateoftravel);
+
+        flight = new JButton("Cancel");
+        flight.setBackground(Color.BLACK);
+        flight.setForeground(Color.WHITE);
+        flight.setBounds(220, 330, 120, 25);
+        flight.addActionListener(this);
+        add(flight);
         setSize(800, 450);
         setLocation(350, 150);
         setVisible(true);
