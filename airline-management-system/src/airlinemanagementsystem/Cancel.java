@@ -8,6 +8,7 @@ import java.util.*;
 import java.util.Random;
 
 public class Cancel extends JFrame implements ActionListener {
+
     JTextField tfpnr;
     JLabel tfname, cancellationno, lblfcode, lbldateoftravel;
     JButton fetchButton, flight;
@@ -95,11 +96,11 @@ public class Cancel extends JFrame implements ActionListener {
             String pnr = tfpnr.getText();
 
             try {
-                Conn conn = new Conn();
+                Connect conn = new Connect();
 
                 String query = "select * from reservation where PNR = '" + pnr + "'";
 
-                ResultSet rs = conn.s.executeQuery(query);
+                ResultSet rs = conn.statement.executeQuery(query);
 
                 if (rs.next()) {
                     tfname.setText(rs.getString("name"));
@@ -119,13 +120,12 @@ public class Cancel extends JFrame implements ActionListener {
             String date = lbldateoftravel.getText();
 
             try {
-                Connect conn = new Connect();
+                Connect connect = new Connect();
 
-                String query = "insert into cancel values('" + pnr + "', '" + name + "', '" + cancelno + "', '" + fcode
-                        + "', '" + date + "')";
+                String query = "insert into cancel values('" + pnr + "', '" + name + "', '" + cancelno + "', '" + fcode + "', '" + date + "')";
 
-                conn.statement.executeUpdate(query);
-                conn.statement.executeUpdate("delete from reservation where PNR = '" + pnr + "'");
+                connect.statement.executeUpdate(query);
+                connect.statement.executeUpdate("delete from reservation where PNR = '" + pnr + "'");
 
                 JOptionPane.showMessageDialog(null, "Ticket Cancelled");
                 setVisible(false);
