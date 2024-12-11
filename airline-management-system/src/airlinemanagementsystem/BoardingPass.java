@@ -25,23 +25,19 @@ public class BoardingPass extends JFrame implements ActionListener {
         heading.setBounds(380, 10, 450, 35);
         heading.setFont(new Font("Tahoma", Font.PLAIN, 32));
         add(heading);
+        // subheading
+        JLabel subheading = new JLabel("Boarding Pass");
+        subheading.setBounds(360, 50, 300, 30);
+        subheading.setFont(new Font("Tahoma", Font.PLAIN, 24));
+        subheading.setForeground(Color.BLUE);
+        add(subheading);
 
-        // NID Input
-        JLabel lblNid = new JLabel("NID: ");
-        lblNid.setBounds(60, 80, 150, 25);
-        lblNid.setFont(new Font("Tahoma", Font.PLAIN, 16));
-        add(lblNid);
-
-        fetchUserButton = new JButton("Fetch User Details");
-        fetchUserButton.setBackground(Color.BLACK);
-        fetchUserButton.setForeground(Color.white);
-        fetchUserButton.setBounds(380, 80, 150, 25);
-        fetchUserButton.addActionListener(this);
-        add(fetchUserButton);
-
-        tflNid = new JTextField();
-        tflNid.setBounds(220, 80, 150, 25);
-        add(tflNid);
+        // nid details for pnr details
+        JLabel lblnid = new JLabel("PNR DETAILS");
+        lblnid.setBounds(60, 100, 150, 25);
+        lblnid.setFont(new Font("Tahoma", Font.PLAIN, 16));
+        add(lblnid);
+        
 
         // Name
         JLabel lblName = new JLabel("Name: ");
