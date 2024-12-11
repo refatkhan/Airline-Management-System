@@ -3,7 +3,7 @@ package airlinemanagementsystem;
 
 import javax.swing.*;
 import java.awt.*;
-import java.sql.ResultSet;
+import java.sql.*;
 import net.proteanit.sql.DbUtils;
 
 /**
@@ -23,9 +23,14 @@ public class FlightInfo extends JFrame {
 
             ResultSet rs = connect.statement("select * from flight");
             table.setModel(DbUtils.resultSetToTableModel(rs));
+            
         } catch (Exception e) {
             e.printStackTrace();
         }
+
+        JScrollPane jsp = new JScrollPane(table);
+        jsp.setBounds(0, 0, 800, 500);
+        add(jsp);
 
         setSize(800, 450);
         setLocation(400, 200);

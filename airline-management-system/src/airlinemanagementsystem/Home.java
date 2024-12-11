@@ -32,17 +32,19 @@ public class Home extends JFrame implements ActionListener {
         JMenu details = new JMenu("Details");
         menubar.add(details);
         // add menu iteams for details menu
-        JMenuItem flightDetails = new JMenu("Flight Details");
+        JMenuItem flightDetails = new JMenuItem("Flight Details");
+        flightDetails.addActionListener(this);
         details.add(flightDetails);
-        JMenuItem customerDetails = new JMenu("Customers Details");
+        JMenuItem customerDetails = new JMenuItem("Customers Details");
+        customerDetails.addActionListener(this);
         details.add(customerDetails);
-        JMenuItem reservationDetails = new JMenu("Reservation Details");
+        JMenuItem reservationDetails = new JMenuItem("Reservation Details");
         details.add(reservationDetails);
-        JMenuItem journeyDetails = new JMenu("Journey Details");
+        JMenuItem journeyDetails = new JMenuItem("Journey Details");
         details.add(journeyDetails);
-        JMenuItem bookDetails = new JMenu("Book Ticket");
+        JMenuItem bookDetails = new JMenuItem("Book Ticket");
         details.add(bookDetails);
-        JMenuItem cancelDetails = new JMenu("Cancel Ticket");
+        JMenuItem cancelDetails = new JMenuItem("Cancel Ticket");
         details.add(cancelDetails);
 
         // menubar for ticket
@@ -62,7 +64,12 @@ public class Home extends JFrame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent ae) {
-
+        String text = ae.getActionCommand();
+        if (text.equals("Customers Details")) {
+            new AddCustomer();
+        } else if (text.equals("Flight Details")) {
+            new FlightInfo();
+        }
     }
 
     public static void main(String[] args) {
