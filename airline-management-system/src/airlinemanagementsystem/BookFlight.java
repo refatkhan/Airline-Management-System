@@ -161,7 +161,7 @@ public class BookFlight extends JFrame implements ActionListener {
         bookFlight.addActionListener(this);
         add(bookFlight);
 
-        setSize(1200, 800);
+        setSize(1000, 750);
         setLocation(300, 150);
         setVisible(true);
     }
