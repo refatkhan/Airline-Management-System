@@ -21,10 +21,9 @@ public class BoardingPass extends JFrame implements ActionListener {
         setLayout(null);
 
         // Heading
-        JLabel heading = new JLabel("Book Flight");
-        heading.setBounds(400, 20, 500, 35);
-        heading.setFont(new Font("Tahoma", Font.BOLD, 30));
-        heading.setForeground(Color.WHITE);
+        JLabel heading = new JLabel("BANGLADESH AIR ");
+        heading.setBounds(380, 10, 450, 35);
+        heading.setFont(new Font("Tahoma", Font.PLAIN, 32));
         add(heading);
 
         // NID Input
@@ -161,7 +160,7 @@ public class BoardingPass extends JFrame implements ActionListener {
         bookFlight.addActionListener(this);
         add(bookFlight);
 
-        setSize(1000, 750);
+        setSize(1000, 450);
         setLocation(300, 150);
         setVisible(true);
     }
