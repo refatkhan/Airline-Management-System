@@ -3,6 +3,8 @@ package airlinemanagementsystem;
 
 import javax.swing.*;
 import java.awt.*;
+import java.sql.ResultSet;
+import net.proteanit.sql.DbUtils;
 
 /**
  *
@@ -14,6 +16,16 @@ public class FlightInfo extends JFrame {
 
         getContentPane().setBackground(Color.WHITE);
         setLayout(null);
+
+        JTable table = new JTable();
+        try {
+            Connect connect = new Connect();
+
+            ResultSet rs = connect.statement("select * from flight");
+            table.setModel(DbUtils.resultSetToTableModel(rs));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
         setSize(800, 450);
         setLocation(400, 200);
