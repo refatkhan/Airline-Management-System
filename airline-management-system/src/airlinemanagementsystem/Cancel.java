@@ -10,8 +10,8 @@ import java.util.Random;
 public class Cancel extends JFrame implements ActionListener {
 
     JTextField tfpnr;
-    JLabel tfname, cancellationno, lblfcode, lbldateoftravel;
-    JButton fetchButton, flight;
+    JLabel tfname, tfnationality, lblsrc, lbldest, labelfname, labelfcode, labeldate;
+    JButton fetchButton;
 
     public Cancel() {
 
@@ -46,10 +46,12 @@ public class Cancel extends JFrame implements ActionListener {
         fetchButton.setBounds(380, 80, 120, 25);
         fetchButton.addActionListener(this);
         add(fetchButton);
+
         JLabel lblname = new JLabel("Name");
         lblname.setBounds(60, 130, 150, 25);
         lblname.setFont(new Font("Tahoma", Font.PLAIN, 16));
         add(lblname);
+
         tfname = new JLabel();
         tfname.setBounds(220, 130, 150, 25);
         add(tfname);
@@ -58,32 +60,24 @@ public class Cancel extends JFrame implements ActionListener {
         lblnationality.setBounds(60, 180, 150, 25);
         lblnationality.setFont(new Font("Tahoma", Font.PLAIN, 16));
         add(lblnationality);
-        cancellationno = new JLabel("" + random.nextInt(1000000));
-        cancellationno.setBounds(220, 180, 150, 25);
-        add(cancellationno);
-        JLabel lbladdress = new JLabel("Flight Code");
-        lbladdress.setBounds(60, 230, 150, 25);
+        tfnationality = new JLabel();
+        tfnationality.setBounds(220, 180, 150, 25);
+        add(tfnationality);
+
+        JLabel lbladdress = new JLabel("SRC");
+        lbladdress.setBounds(60, 220, 150, 25);
         lbladdress.setFont(new Font("Tahoma", Font.PLAIN, 16));
         add(lbladdress);
-        lblfcode = new JLabel();
-        lblfcode.setBounds(220, 230, 150, 25);
-        add(lblfcode);
+
+        lblsrc = new JLabel();
+        lblsrc.setBounds(220, 220, 150, 25);
+        add(lblsrc);
 
         JLabel lblgender = new JLabel("Date");
         lblgender.setBounds(60, 280, 150, 25);
         lblgender.setFont(new Font("Tahoma", Font.PLAIN, 16));
         add(lblgender);
 
-        lbldateoftravel = new JLabel();
-        lbldateoftravel.setBounds(220, 280, 150, 25);
-        add(lbldateoftravel);
-
-        flight = new JButton("Cancel");
-        flight.setBackground(Color.BLACK);
-        flight.setForeground(Color.WHITE);
-        flight.setBounds(220, 330, 120, 25);
-        flight.addActionListener(this);
-        add(flight);
         setSize(800, 450);
         setLocation(350, 150);
         setVisible(true);
@@ -122,7 +116,8 @@ public class Cancel extends JFrame implements ActionListener {
             try {
                 Connect connect = new Connect();
 
-                String query = "insert into cancel values('" + pnr + "', '" + name + "', '" + cancelno + "', '" + fcode + "', '" + date + "')";
+                String query = "insert into cancel values('" + pnr + "', '" + name + "', '" + cancelno + "', '" + fcode
+                        + "', '" + date + "')";
 
                 connect.statement.executeUpdate(query);
                 connect.statement.executeUpdate("delete from reservation where PNR = '" + pnr + "'");
