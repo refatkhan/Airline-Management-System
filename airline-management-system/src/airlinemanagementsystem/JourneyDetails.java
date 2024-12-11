@@ -8,15 +8,19 @@ import net.proteanit.sql.DbUtils;
 
 public class JourneyDetails extends JFrame {
 
+    JTable table;
+    
+
     public JourneyDetails() {
 
         getContentPane().setBackground(Color.WHITE);
         setLayout(null);
 
-        JTable table = new JTable();
+        table = new JTable();
 
         JScrollPane jsp = new JScrollPane(table);
         jsp.setBounds(0, 0, 800, 500);
+        jsp.setBackground(Color.white);
         add(jsp);
 
         setSize(800, 500);
