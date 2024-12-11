@@ -9,12 +9,17 @@ import net.proteanit.sql.DbUtils;
 public class JourneyDetails extends JFrame {
 
     JTable table;
-    
+    JTextField pnr;
 
     public JourneyDetails() {
 
         getContentPane().setBackground(Color.WHITE);
         setLayout(null);
+
+        JLabel lblpnr = new JLabel("PNR Details");
+        lblpnr.setFont(new Font("Tahoma", Font.PLAIN, 16));
+        lblpnr.setBounds(50, 50, 100, 25);
+        add(lblpnr);
 
         table = new JTable();
 
